@@ -1,0 +1,580 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>
+        英语作文生成器
+    </title>
+    <style>
+        body {
+            height:1200px;
+            margin:0;
+            text-align: center;
+            color: #ffffff;
+        }
+        #Bg {
+            width:100%;height:100%;
+            background: url('bg.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        div, textarea {
+            transition: width 0.5s, height 0.5s;
+            -moz-transition: width 0.5s, height 0.5s; /* Firefox 4 */
+            -webkit-transition: width 0.5s, height 0.5s; /* Safari and Chrome */
+            -o-transition: width 0.5s, height 0.5s; /* Opera */
+        }
+
+        .form {
+            outline: none;
+            padding: 12px 20px;
+            margin: 8px 0;
+            border:none;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Times, Arial, 'HYQiHei 60S';
+            font-size:16px;
+        }
+        .form::-webkit-input-placeholder{
+            color:#cacaca;
+            font-weight:lighter;
+        }
+        .form::-moz-placeholder {
+            color: #cacaca;
+            font-weight: lighter;
+        }
+        .form:-moz-placeholder {
+            color: #cacaca;
+            font-weight: lighter;
+        }
+        .form::-webkit-scrollbar {
+            display: none;
+        }
+
+        #Title {
+            font-size: 30px;
+            margin: 0 auto;
+            text-align: left;
+            color: #4f4f4f;
+            text-shadow: -1px -1px 4px rgba(240,240,240,0.7),1px 1px 3px rgba(12,12,12,0.5);
+        }
+
+        textarea.form {
+            color: #6f6f6f;
+            background: #eeeeef;
+            outline: none;
+            height: 150px;
+            resize: none;
+            box-shadow: 6px 6px 4px 0 rgba(200,200,200,0.4) inset,-6px -6px 4px 0 rgba(255,255,255,0.8) inset;
+        }
+
+        #cMainbody {
+            margin: 0 auto;
+            padding: 40px;
+            background: #eeeeef;
+            box-shadow: -6px -6px 26px 0 rgba(255,255,255,0.5),6px 6px 16px 0 rgba(40,40,40,1);
+            border-radius: 12px;
+        }
+
+        button.pink {
+            background-color: #eeeeef;
+            color: #bebebf;
+            text-shadow: -1px -1px 4px rgba(255,255,255,0.83),1px 1px 3px rgba(155,150,143,0.51);
+            padding: 10px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 12px;
+            font-family: Arial,'HYQiHei 60S';
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: -6px -6px 26px 0 rgba(255,255,255,1),6px 6px 16px 0 rgba(217,210,200,0.91);
+            outline: none;
+        }
+            button.pink:active {
+                color:#b0b0b1;
+                box-shadow: -6px -6px 26px 0 rgba(255,255,255,1) inset,6px 6px 16px 0 rgba(217,210,200,0.91) inset;
+                text-shadow: -1px -1px 4px rgba(233,233,233,0.75),1px 1px 3px rgba(155,150,143,0.63);
+            }
+        #btnGenerate, #btnTopic {
+            position: absolute;
+            left: 2px;
+            top: -20px;
+            width: 160px;
+            height: 40px;
+        }
+
+        #cGenerate, #cTopic {
+            position: relative;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+        #Topic {
+            height: 44px;
+        }
+        #Generate {
+            height: 200px;
+            padding-top: 40px;
+        }
+        
+        
+        
+        #Notice,#WordNum {
+            color: #b0b0b1;
+            font-family: Arial,sans-serif;
+            text-shadow: -1px -1px 4px rgba(255,255,255,0.75),1px 1px 3px rgba(155,150,143,0.6);
+        }
+        #Notice {
+            font-size:12px;
+            text-align:left;
+            position: absolute;
+            left: 10px;
+            bottom: -14px;
+        }
+        #WordNum {
+            font-size: 17px;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        @media screen and (max-width: 1080px) {
+            body{
+                height:2400px;
+            }
+            .form {
+                width: 100%;
+                font-size: 32px;
+            }
+            #Title, #cMainbody {
+                width: 85%;
+            }
+            #cMainbody {
+                padding-top: 80px;
+            }
+
+            #cGenerate, #cTopic {
+                position: relative;
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+            #btnGenerate, #btnTopic {
+                font-size: 36px;
+                top: -60px;
+                width: 320px;
+                height: 80px;
+            }
+            #Topic {
+                padding-top: 25px;
+                height: 88px;
+            }
+            #Generate {
+                height: 400px;
+                padding-top: 40px;
+            }
+
+            #WordNum {
+                font-size: 32px;
+            }
+            #Notice{
+                font-size:15px;
+            }
+        }
+
+        @media screen and (min-width: 1080px) {
+            .form,#Title,#cMainbody{
+                width:600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="Bg">
+        <div id="Title"><h2 style="margin:0 0 30px 0"><br/>英语作文生成器</h2></div>
+        <div id="cMainbody">
+            <div id="cTopic">
+                <button id="btnTopic" class="pink" onclick="随机主题()">主题 / Topic</button>
+                <script>
+                    function 随机主题()
+                    {
+                    var 主题=[
+                    "wildlife protection",
+                    "environment protection",
+                    "how to copy homework",
+                    "how to get full marks",
+                    "saving the earth",
+                    "communication with others",
+                    "relationships"
+                    ];
+                    document.getElementById("Topic").value=随机取出(主题);
+                    }
+                </script>
+                <textarea id="Topic" class="form" placeholder="输入文章的主题，最好为名词性短语"></textarea>
+            </div>
+            <div id="cGenerate">
+                <span id="WordNum"></span>
+                <button id="btnGenerate" class="pink" onclick="生成()">生成 / Generate</button>
+                <textarea id="Generate" class="form" placeholder="生成结果"></textarea>
+                <span id="Notice"> 说明：<br />1.本生成器适用于提出建议型的作文；<br />2.不要将生成的作文用于正规用途。</span>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function 生成语句(){
+            今天我要说=[
+                "Today I'm writing to talk about 主题, ",
+                "I'm honored today to talk about 主题, ",
+                "Today I want to share my ideas about 主题, ",
+                "My topic today is 主题, ",
+                "Recently, I've been thinking about 主题, ",
+                "Nowadays, more and more people are talking about 主题, ",
+                "As the development of technology, 主题 becomes a hot topic, ",
+                "Now more and more people become insterested in 主题, ",
+                "主题 is a hot topic today, ",
+                "We are now all talking about 主题, "
+            ];
+
+            主题的重要性=[
+                "we all know the importance of 主题. ",
+                "主题 is an important thing in our life. ",
+                "how can 主题 be so significant? Let me tell you the truth. ",
+                "why is 主题 so indispensible? Let me answer this question. ",
+                "we need to seriously consider the special meanings of 主题 for ourselves. ",
+                "let's reexamine 主题 with questions. ",
+                "it is the key to solve all the problems to understand the existence of 主题. ",
+                "as far as I am concerned, 主题 is of great significance to me. ",
+                "we must think carefully. ",
+                "主题 may change the world day by day. ",
+                "主题 could make an influence upon us gradually. ",
+                "主题 is so important that we can't ignore it. ",
+                "for me personally, 主题 is not only a major event, but also may change my life. ",
+                "this fact is of great significance to me, and I believe it is of certain significance to the world, too. "
+            ];
+
+            过渡句=[
+                "So, ",
+                "Because ",
+                "Though, ",
+                "What's more, ",
+                "As a matter of fact, ",
+                "Actually, ",
+                "You know, ",
+                "As we all know, ",
+                "As everyone knows, ",
+                "Anyway, ",
+                "Also, ",
+                "By the way, ",
+                "Perhaps ",
+                "Maybe ",
+                "Possibly ",
+                "Probably ",
+                "It's likely that ",
+                "It seems that ",
+                "Without doubt, ",
+                "It's recognized that ",
+                "However, ",
+                "But we have to admit, ",
+                "In fact, "
+            ];
+
+            我给出建议=[
+                "Now let me share my suggestions with you. ",
+                "Now let me give my suggestions. ",
+                "Here are my suggestions. ",
+                "Here's my advice. ",
+                "Here are the solutions. ",
+                "Here's my ideas. "
+            ]
+
+            为什么不=[
+                "why not ? ",
+                "why don't we ? ",
+                "we can . ",
+                "we should . ",
+                "we may . ",
+                "we could . ",
+                "it's all good to . ",
+                "it's a good idea to . ",
+                "I suggest we should . ",
+                "I advise we should . "
+            ];
+
+            做法=[
+                ['start with ourselves'],
+
+                ["ask our teachers for help",
+                "consult our teachers about it",
+                "seek help from our teachers",
+                "seek advice from our teachers"],
+                
+                ["ask our parents for help",
+                "seek help from our parents",
+                "seek advice from our parents"],
+                
+                ["consult experts about it",
+                "seek advice from experts"],
+
+                ['seek help from the government'],
+                
+                ['solve it by legal means'],
+
+                ["call on everyone to work on it",
+                'remind everyone around us of the importance of 主题'],
+
+                ["never give up",
+                "have the spirit of persistence",
+                'try to be persistent'],
+        
+                ['try to recognize the major task'],
+
+                ['build our confidence'],
+
+                ['be realistic and pragmatic'],
+                
+                ['follow the basic principle',
+                'obey the rules',
+                'follow the rules',],
+            
+                ['calm down and have a clear consideration'],
+
+                ['learn from past experience',
+                "learn from others' experience"],
+
+                ['make up our minds'],
+                
+                ['make a clear plan'],
+                
+                ['set a goal and go for it'],
+
+                ['become careful not to make even a little mistake'],
+
+                ['ask ourselves what we really want']
+            ];
+
+            通过这种方法=[
+                "in this way, ",
+                "this way ",
+                "through doing this, ",
+                "by the means, ",
+                "if we 做法, ",
+                "by doing this, ",
+                "using this method, "
+            ];
+
+            我们可以=[
+                "we can ",
+                "we could ",
+                "we are able to "
+            ];
+
+            作用=[
+                "make hard things simple",
+                "make it easier to realize",
+                "make it finally",
+                "succeed to find the problem",
+                "get out of trouble",
+                "find another way to think",
+                "learn a lesson from failure",
+                "improve our abilities",
+                "do the same thing more exactly and fast",
+                "make it right",
+                "fulfill our responsibility",
+                "grasp the opportunity",
+                "improve our efficiency so that we can solve the problem much faster",
+                "realize the mistakes we made before",
+                "reach an agreement",
+                "see the essence through the phenomenon",
+                "solve the key problem soon",
+                "see the key point",
+                "do that much better",
+                "recognize 主题 more clearly",
+                "soon find a solution"
+            ];
+
+            名人名言=[
+                "Voltaire 曾经说过without great difficulties, there will be no great cause. 陷入沉思",
+                "Fuller 曾经说过suffering cultivates some people and destroys others. 陷入沉思",
+                "Vincent Peel 曾经说过changing your mind changes your world. 陷入沉思",
+                "Napoleon Hill 曾经说过don't wait, the time will never be right. 陷入沉思",
+                "Seneca 曾经说过life is like a fable. Its value is not in its length, but in its content. 陷入沉思",
+                "Oprah Winfrey 曾经说过you are what you believe. 陷入沉思",
+                "Lucent 曾经说过life can't be twice, but many people are not good at even once. 陷入沉思",
+                "Shakespeare 曾经说过a man's life is short, but if he lived it in despicable ways, it would be too long. 陷入沉思",
+                "Descartes 曾经说过my efforts to study have no other benefits, but more and more found their ignorance. 陷入沉思",
+                "Zola 曾经说过once the road of life is chosen, we should go to the end bravely and never look back. 陷入沉思",
+                "Michelle Pan 曾经说过life is a dangerous Canyon, only brave people can pass through. 陷入沉思",
+                "Jim Ron 曾经说过either you dominate life or you are dominated by life. 陷入沉思",
+                "Haibel 曾经说过life is school. There, a good teacher is not so much happiness as misfortune. 陷入沉思",
+                "Jennalle George S. button 曾经说过if you accept the challenge, you can enjoy the joy of victory. 陷入沉思",
+                "Democritus 曾经说过moderation increases pleasure and enhances enjoyment. 陷入沉思",
+                "Pestalozzi 曾经说过what should be done today has not been done, and it will be delayed tomorrow. 陷入沉思",
+                "Carnegie 曾经说过a man who doesn't pay attention to small things will never make a great career. 陷入沉思",
+                "Rousseau 曾经说过wasting time is a great sin. 陷入沉思",
+                "Kant 曾经说过since I have set foot on this road, nothing should hinder me from following this road. 陷入沉思",
+                "Sir Klaus Mercer 曾经说过education costs money, and so does ignorance. 陷入沉思",
+                "Voltaire 曾经说过to stick to the cause of great will requires a consistent spirit. 陷入沉思",
+                "Abraham Lincoln 曾经说过it's not so much how old you live, but how you spend those years. 陷入沉思",
+                "Han Fei 曾经说过internal and external correspondences should be matched by words and deeds. 陷入沉思",
+                "Marton 曾经说过strong confidence can make ordinary people make amazing career. 陷入沉思",
+                "Descartes 曾经说过to read all good books is to talk with many noble people. 陷入沉思",
+                "Seneca 曾经说过real life can only be realized after a difficult and extraordinary struggle. 陷入沉思",
+                "Ibsen 曾经说过great cause needs determination, ability, organization and sense of responsibility. 陷入沉思",
+                "Goethe 曾经说过no one knows how powerful he is until he tries. 陷入沉思",
+                "Darwin 曾经说过a man who dares to waste even an hour does not know how to cherish the full value of life. 陷入沉思",
+                "Anonymous 曾经说过appreciate every new challenge, because it will build your will and character. 陷入沉思",
+                "Ostrovsky 曾经说过a common cause, a common struggle, can make people have the power to endure everything. 陷入沉思",
+                "Su Shi 曾经说过those who made great achievements in ancient times must not only have extraordinary talents, but also perseverance. 陷入沉思",
+                "Wang Yangming 曾经说过those who are determined to learn are also determined to learn, and those who are scholars are determined to do so. 陷入沉思",
+                "Goethe 曾经说过reading a good book is like talking to a noble man. 陷入沉思",
+                "ushinsky 曾经说过learning is labor, and it is labor full of ideas. 陷入沉思",
+                "Belinsky 曾经说过good books are the most precious treasure. 陷入沉思",
+                "Franklin 曾经说过reading is easy and thinking is difficult, but without one of them, there is no use. 陷入沉思",
+                "rubakin 曾经说过reading is to build up one's own thoughts with the help of others' thoughts. 陷入沉思",
+                "Bacon 曾经说过to arrange time properly is to save time. 陷入沉思",
+                "Turgenev 曾经说过do you want to be happy? I hope you learn to bear hardships first. 陷入沉思",
+                "Shakespeare 曾经说过the man who abandons time, time abandons him. 陷入沉思",
+                "Schopenhauer 曾经说过ordinary people only think about how to spend their time, and talented people try to make use of it. 陷入沉思",
+                "Laroche FUKO 曾经说过it is more important to persevere in achieving than to persevere in defeat. 陷入沉思",
+                "Shakespeare 曾经说过a man's life is short, but if he lives it in despicable ways, it will be too long. 陷入沉思",
+                "Bismarck 曾经说过failure is the last test of perseverance. 陷入沉思",
+                "Shakespeare 曾经说过the wisdom in that head, like the spark in the flint, would not come out without fighting it. 陷入沉思"
+            ];
+
+            曾经说过=[
+                "once said, ",
+                "inadvertently said so, ",
+                "mentioned before, ",
+                "said a word full of philosophy, "
+            ];
+
+            陷入沉思=[
+                "It makes me lost in thought. ",
+                "With this sentence, we need to examine this issue more carefully. ",
+                "I hope you can understand this sentence well. ",
+                "Although this sentence is short, it makes me think about it. ",
+                "It precisely proves that. ",
+                "It just proves my opinions. ", 
+                "Don't you think it does have a point? ",
+                "From this point of view, it does work if we 做法. ",
+                "Certainly, it means that to 做法 is a good way to solve the problem. ",
+                "We can see the advantages to 做法 through the sentence. ",
+                "According to the sentence, we can know it is really a wise method to 做法. "
+            ];
+
+            分点=[
+                ['First, ','Second, ','Third, '],
+                ['Firstly, ','Secondly, ','Thirdly, '],
+                ['Above all, ','Next, ','Finally, ']
+            ];
+
+            总结=[
+                "All in all, ",
+                "In a word, ",
+                "In conclusion, ",
+                "Anyhow, "
+            ];
+
+            总结的话语=[
+                "If we work together, I believe we can solve the problem finally. ",
+                "Let's work together, then we will finally work it out. ",
+                "I think no difficulty can beat us. "
+            ];
+        }
+
+
+        function 随机数(minNum,maxNum) {												
+			switch(arguments.length) {												
+				case 1:																
+					return parseInt(Math.random()*minNum+1,10);						
+					break;															
+				case 2:																
+					return parseInt(Math.random()*(maxNum-minNum+1)+minNum,10);		
+					break;															
+				default:															
+					return 0;														
+					break;															
+			}																		
+		}
+
+        function 随机取出(列表){
+            return 列表[随机数(0,列表.length-1)];
+        }
+
+        function 随机不重复取出(列表){
+            if(列表.length>=2)
+                return 列表.splice(随机数(0,列表.length-1),1)[0];
+            return 列表[随机数(0,列表.length-1)];
+        }
+
+        function 生成(){
+            生成语句();
+
+            主题=document.getElementById("Topic").value;
+            if(主题=='')
+            {
+                document.getElementById("Generate").value="你还没输主题，写不出来";
+                return;
+            }
+
+            开头=
+            随机不重复取出(今天我要说)
+            +随机不重复取出(主题的重要性);
+
+            随机次数=随机数(1,2);
+            for(i=0;i<随机次数;++i)
+            {
+                开头+=随机不重复取出(过渡句);
+                开头+=随机不重复取出(主题的重要性);
+            }
+            开头+=随机不重复取出(我给出建议);
+            
+            var 中间='';
+            var 随机分点=随机取出(分点);
+            for(var i=0;i<3;++i)
+            {
+                var 当前做法=随机不重复取出(随机不重复取出(做法));
+                中间+=随机分点[i];
+                中间+=随机不重复取出(为什么不);
+                中间=中间.slice(0,中间.length-2)+
+                当前做法+中间.slice(中间.length-2,中间.length);
+
+                随机次数=随机数(2,3);
+                for(var j=0;j<随机次数;++j)
+                {
+                    中间+=随机不重复取出(过渡句);
+                    if(随机数(1,10)<3)
+                        中间+=随机不重复取出(名人名言)
+                        .replace(RegExp('曾经说过','g'),随机取出(曾经说过))
+                        .replace(RegExp('陷入沉思','g'),随机取出(陷入沉思));
+                    else
+                    {
+                        中间+=随机取出(通过这种方法);
+                        中间+=随机取出(我们可以);
+                        中间+=随机不重复取出(作用)+'. ';
+                    }
+                }
+                中间=中间.replace(RegExp('做法', 'g'),当前做法);
+                中间+='\n\n';
+            }
+
+            var 结尾=随机不重复取出(总结)+
+            随机不重复取出(主题的重要性)+
+            随机不重复取出(总结的话语);
+            
+            var Generate=document.getElementById("Generate");
+            Generate.style.height="650px";
+            var 通篇='Dear xxx,\n\n'+开头+'\n\n'+中间+结尾+'\n\nYours, xxx';
+            通篇=通篇.replace(RegExp('主题','g'),主题);
+            Generate.value=通篇;
+            
+            var 词数=0;
+            while (通篇.indexOf(' ')+1)
+            {
+                通篇=通篇.replace(' ','');
+                词数++;
+            }
+            document.getElementById("WordNum").innerHTML=词数+" words";
+        }
+    </script>
+</body>
+</html>
