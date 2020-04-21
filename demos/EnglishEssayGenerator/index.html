@@ -1,18 +1,21 @@
-<!DOCTYPE HTML>
+ï»¿<!DOCTYPE HTML>
 <html>
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>
-        Ó¢Óï×÷ÎÄÉú³ÉÆ÷
+        è‹±è¯­ä½œæ–‡ç”Ÿæˆå™¨
     </title>
     <style>
         body {
-            height:1200px;
-            margin:0;
+            height: 1200px;
+            margin: 0;
             text-align: center;
             color: #ffffff;
         }
+
         #Bg {
-            width:100%;height:100%;
+            width: 100%;
+            height: 100%;
             background: url('bg.png');
             background-size: cover;
             background-position: center;
@@ -29,27 +32,31 @@
             outline: none;
             padding: 12px 20px;
             margin: 8px 0;
-            border:none;
+            border: none;
             border-radius: 12px;
             box-sizing: border-box;
             font-family: 'Times New Roman', Times, Arial, 'HYQiHei 60S';
-            font-size:16px;
+            font-size: 16px;
         }
-        .form::-webkit-input-placeholder{
-            color:#cacaca;
-            font-weight:lighter;
-        }
-        .form::-moz-placeholder {
-            color: #cacaca;
-            font-weight: lighter;
-        }
-        .form:-moz-placeholder {
-            color: #cacaca;
-            font-weight: lighter;
-        }
-        .form::-webkit-scrollbar {
-            display: none;
-        }
+
+            .form::-webkit-input-placeholder {
+                color: #cacaca;
+                font-weight: lighter;
+            }
+
+            .form::-moz-placeholder {
+                color: #cacaca;
+                font-weight: lighter;
+            }
+
+            .form:-moz-placeholder {
+                color: #cacaca;
+                font-weight: lighter;
+            }
+
+            .form::-webkit-scrollbar {
+                display: none;
+            }
 
         #Title {
             font-size: 30px;
@@ -90,11 +97,13 @@
             box-shadow: -6px -6px 26px 0 rgba(255,255,255,1),6px 6px 16px 0 rgba(217,210,200,0.91);
             outline: none;
         }
+
             button.pink:active {
-                color:#b0b0b1;
+                color: #b0b0b1;
                 box-shadow: -6px -6px 26px 0 rgba(255,255,255,1) inset,6px 6px 16px 0 rgba(217,210,200,0.91) inset;
                 text-shadow: -1px -1px 4px rgba(233,233,233,0.75),1px 1px 3px rgba(155,150,143,0.63);
             }
+
         #btnGenerate, #btnTopic {
             position: absolute;
             left: 2px;
@@ -108,28 +117,32 @@
             padding-top: 40px;
             padding-bottom: 40px;
         }
+
         #Topic {
             height: 44px;
         }
+
         #Generate {
             height: 200px;
             padding-top: 40px;
         }
-        
-        
-        
-        #Notice,#WordNum {
+
+
+
+        #Notice, #WordNum {
             color: #b0b0b1;
             font-family: Arial,sans-serif;
             text-shadow: -1px -1px 4px rgba(255,255,255,0.75),1px 1px 3px rgba(155,150,143,0.6);
         }
+
         #Notice {
-            font-size:12px;
-            text-align:left;
+            font-size: 12px;
+            text-align: left;
             position: absolute;
             left: 10px;
             bottom: -14px;
         }
+
         #WordNum {
             font-size: 17px;
             position: absolute;
@@ -138,16 +151,19 @@
         }
 
         @media screen and (max-width: 1080px) {
-            body{
-                height:2400px;
+            body {
+                height: 2400px;
             }
+
             .form {
                 width: 100%;
                 font-size: 32px;
             }
+
             #Title, #cMainbody {
                 width: 85%;
             }
+
             #cMainbody {
                 padding-top: 80px;
             }
@@ -157,16 +173,19 @@
                 padding-top: 80px;
                 padding-bottom: 80px;
             }
+
             #btnGenerate, #btnTopic {
                 font-size: 36px;
                 top: -60px;
                 width: 320px;
                 height: 80px;
             }
+
             #Topic {
                 padding-top: 25px;
                 height: 88px;
             }
+
             #Generate {
                 height: 400px;
                 padding-top: 40px;
@@ -175,28 +194,29 @@
             #WordNum {
                 font-size: 32px;
             }
-            #Notice{
-                font-size:15px;
+
+            #Notice {
+                font-size: 15px;
             }
         }
 
         @media screen and (min-width: 1080px) {
-            .form,#Title,#cMainbody{
-                width:600px;
+            .form, #Title, #cMainbody {
+                width: 600px;
             }
         }
     </style>
 </head>
 <body>
     <div id="Bg">
-        <div id="Title"><h2 style="margin:0 0 30px 0"><br/>Ó¢Óï×÷ÎÄÉú³ÉÆ÷</h2></div>
+        <div id="Title"><h2 style="margin:0 0 30px 0"><br/>è‹±è¯­ä½œæ–‡ç”Ÿæˆå™¨</h2></div>
         <div id="cMainbody">
             <div id="cTopic">
-                <button id="btnTopic" class="pink" onclick="Ëæ»úÖ÷Ìâ()">Ö÷Ìâ / Topic</button>
+                <button id="btnTopic" class="pink" onclick="éšæœºä¸»é¢˜()">ä¸»é¢˜ / Topic</button>
                 <script>
-                    function Ëæ»úÖ÷Ìâ()
+                    function éšæœºä¸»é¢˜()
                     {
-                    var Ö÷Ìâ=[
+                    var ä¸»é¢˜=[
                     "wildlife protection",
                     "environment protection",
                     "how to copy homework",
@@ -205,53 +225,53 @@
                     "communication with others",
                     "relationships"
                     ];
-                    document.getElementById("Topic").value=Ëæ»úÈ¡³ö(Ö÷Ìâ);
+                    document.getElementById("Topic").value=éšæœºå–å‡º(ä¸»é¢˜);
                     }
                 </script>
-                <textarea id="Topic" class="form" placeholder="ÊäÈëÎÄÕÂµÄÖ÷Ìâ£¬×îºÃÎªÃû´ÊĞÔ¶ÌÓï"></textarea>
+                <textarea id="Topic" class="form" placeholder="è¾“å…¥æ–‡ç« çš„ä¸»é¢˜ï¼Œæœ€å¥½ä¸ºåè¯æ€§çŸ­è¯­"></textarea>
             </div>
             <div id="cGenerate">
                 <span id="WordNum"></span>
-                <button id="btnGenerate" class="pink" onclick="Éú³É()">Éú³É / Generate</button>
-                <textarea id="Generate" class="form" placeholder="Éú³É½á¹û"></textarea>
-                <span id="Notice"> ËµÃ÷£º<br />1.±¾Éú³ÉÆ÷ÊÊÓÃÓÚÌá³ö½¨ÒéĞÍµÄ×÷ÎÄ£»<br />2.²»Òª½«Éú³ÉµÄ×÷ÎÄÓÃÓÚÕı¹æÓÃÍ¾¡£</span>
+                <button id="btnGenerate" class="pink" onclick="ç”Ÿæˆ()">ç”Ÿæˆ / Generate</button>
+                <textarea id="Generate" class="form" placeholder="ç”Ÿæˆç»“æœ"></textarea>
+                <span id="Notice"> è¯´æ˜ï¼š<br />1.æœ¬ç”Ÿæˆå™¨é€‚ç”¨äºæå‡ºå»ºè®®å‹çš„ä½œæ–‡ï¼›<br />2.ä¸è¦å°†ç”Ÿæˆçš„ä½œæ–‡ç”¨äºæ­£è§„ç”¨é€”ã€‚</span>
             </div>
         </div>
     </div>
     <script>
 
-        function Éú³ÉÓï¾ä(){
-            ½ñÌìÎÒÒªËµ=[
-                "Today I'm writing to talk about Ö÷Ìâ, ",
-                "I'm honored today to talk about Ö÷Ìâ, ",
-                "Today I want to share my ideas about Ö÷Ìâ, ",
-                "My topic today is Ö÷Ìâ, ",
-                "Recently, I've been thinking about Ö÷Ìâ, ",
-                "Nowadays, more and more people are talking about Ö÷Ìâ, ",
-                "As the development of technology, Ö÷Ìâ becomes a hot topic, ",
-                "Now more and more people become insterested in Ö÷Ìâ, ",
-                "Ö÷Ìâ is a hot topic today, ",
-                "We are now all talking about Ö÷Ìâ, "
+        function ç”Ÿæˆè¯­å¥(){
+            ä»Šå¤©æˆ‘è¦è¯´=[
+                "Today I'm writing to talk about ä¸»é¢˜, ",
+                "I'm honored today to talk about ä¸»é¢˜, ",
+                "Today I want to share my ideas about ä¸»é¢˜, ",
+                "My topic today is ä¸»é¢˜, ",
+                "Recently, I've been thinking about ä¸»é¢˜, ",
+                "Nowadays, more and more people are talking about ä¸»é¢˜, ",
+                "As the development of technology, ä¸»é¢˜ becomes a hot topic, ",
+                "Now more and more people become insterested in ä¸»é¢˜, ",
+                "ä¸»é¢˜ is a hot topic today, ",
+                "We are now all talking about ä¸»é¢˜, "
             ];
 
-            Ö÷ÌâµÄÖØÒªĞÔ=[
-                "we all know the importance of Ö÷Ìâ. ",
-                "Ö÷Ìâ is an important thing in our life. ",
-                "how can Ö÷Ìâ be so significant? Let me tell you the truth. ",
-                "why is Ö÷Ìâ so indispensible? Let me answer this question. ",
-                "we need to seriously consider the special meanings of Ö÷Ìâ for ourselves. ",
-                "let's reexamine Ö÷Ìâ with questions. ",
-                "it is the key to solve all the problems to understand the existence of Ö÷Ìâ. ",
-                "as far as I am concerned, Ö÷Ìâ is of great significance to me. ",
+            ä¸»é¢˜çš„é‡è¦æ€§=[
+                "we all know the importance of ä¸»é¢˜. ",
+                "ä¸»é¢˜ is an important thing in our life. ",
+                "how can ä¸»é¢˜ be so significant? Let me tell you the truth. ",
+                "why is ä¸»é¢˜ so indispensible? Let me answer this question. ",
+                "we need to seriously consider the special meanings of ä¸»é¢˜ for ourselves. ",
+                "let's reexamine ä¸»é¢˜ with questions. ",
+                "it is the key to solve all the problems to understand the existence of ä¸»é¢˜. ",
+                "as far as I am concerned, ä¸»é¢˜ is of great significance to me. ",
                 "we must think carefully. ",
-                "Ö÷Ìâ may change the world day by day. ",
-                "Ö÷Ìâ could make an influence upon us gradually. ",
-                "Ö÷Ìâ is so important that we can't ignore it. ",
-                "for me personally, Ö÷Ìâ is not only a major event, but also may change my life. ",
+                "ä¸»é¢˜ may change the world day by day. ",
+                "ä¸»é¢˜ could make an influence upon us gradually. ",
+                "ä¸»é¢˜ is so important that we can't ignore it. ",
+                "for me personally, ä¸»é¢˜ is not only a major event, but also may change my life. ",
                 "this fact is of great significance to me, and I believe it is of certain significance to the world, too. "
             ];
 
-            ¹ı¶É¾ä=[
+            è¿‡æ¸¡å¥=[
                 "So, ",
                 "Because ",
                 "Though, ",
@@ -277,7 +297,7 @@
                 "In fact, "
             ];
 
-            ÎÒ¸ø³ö½¨Òé=[
+            æˆ‘ç»™å‡ºå»ºè®®=[
                 "Now let me share my suggestions with you. ",
                 "Now let me give my suggestions. ",
                 "Here are my suggestions. ",
@@ -286,7 +306,7 @@
                 "Here's my ideas. "
             ]
 
-            ÎªÊ²Ã´²»=[
+            ä¸ºä»€ä¹ˆä¸=[
                 "why not ? ",
                 "why don't we ? ",
                 "we can . ",
@@ -299,7 +319,7 @@
                 "I advise we should . "
             ];
 
-            ×ö·¨=[
+            åšæ³•=[
                 ['start with ourselves'],
 
                 ["ask our teachers for help",
@@ -319,7 +339,7 @@
                 ['solve it by legal means'],
 
                 ["call on everyone to work on it",
-                'remind everyone around us of the importance of Ö÷Ìâ'],
+                'remind everyone around us of the importance of ä¸»é¢˜'],
 
                 ["never give up",
                 "have the spirit of persistence",
@@ -351,23 +371,23 @@
                 ['ask ourselves what we really want']
             ];
 
-            Í¨¹ıÕâÖÖ·½·¨=[
+            é€šè¿‡è¿™ç§æ–¹æ³•=[
                 "in this way, ",
                 "this way ",
                 "through doing this, ",
                 "by the means, ",
-                "if we ×ö·¨, ",
+                "if we åšæ³•, ",
                 "by doing this, ",
                 "using this method, "
             ];
 
-            ÎÒÃÇ¿ÉÒÔ=[
+            æˆ‘ä»¬å¯ä»¥=[
                 "we can ",
                 "we could ",
                 "we are able to "
             ];
 
-            ×÷ÓÃ=[
+            ä½œç”¨=[
                 "make hard things simple",
                 "make it easier to realize",
                 "make it finally",
@@ -387,67 +407,67 @@
                 "solve the key problem soon",
                 "see the key point",
                 "do that much better",
-                "recognize Ö÷Ìâ more clearly",
+                "recognize ä¸»é¢˜ more clearly",
                 "soon find a solution"
             ];
 
-            ÃûÈËÃûÑÔ=[
-                "Voltaire Ôø¾­Ëµ¹ıwithout great difficulties, there will be no great cause. ÏİÈë³ÁË¼",
-                "Fuller Ôø¾­Ëµ¹ısuffering cultivates some people and destroys others. ÏİÈë³ÁË¼",
-                "Vincent Peel Ôø¾­Ëµ¹ıchanging your mind changes your world. ÏİÈë³ÁË¼",
-                "Napoleon Hill Ôø¾­Ëµ¹ıdon't wait, the time will never be right. ÏİÈë³ÁË¼",
-                "Seneca Ôø¾­Ëµ¹ılife is like a fable. Its value is not in its length, but in its content. ÏİÈë³ÁË¼",
-                "Oprah Winfrey Ôø¾­Ëµ¹ıyou are what you believe. ÏİÈë³ÁË¼",
-                "Lucent Ôø¾­Ëµ¹ılife can't be twice, but many people are not good at even once. ÏİÈë³ÁË¼",
-                "Shakespeare Ôø¾­Ëµ¹ıa man's life is short, but if he lived it in despicable ways, it would be too long. ÏİÈë³ÁË¼",
-                "Descartes Ôø¾­Ëµ¹ımy efforts to study have no other benefits, but more and more found their ignorance. ÏİÈë³ÁË¼",
-                "Zola Ôø¾­Ëµ¹ıonce the road of life is chosen, we should go to the end bravely and never look back. ÏİÈë³ÁË¼",
-                "Michelle Pan Ôø¾­Ëµ¹ılife is a dangerous Canyon, only brave people can pass through. ÏİÈë³ÁË¼",
-                "Jim Ron Ôø¾­Ëµ¹ıeither you dominate life or you are dominated by life. ÏİÈë³ÁË¼",
-                "Haibel Ôø¾­Ëµ¹ılife is school. There, a good teacher is not so much happiness as misfortune. ÏİÈë³ÁË¼",
-                "Jennalle George S. button Ôø¾­Ëµ¹ıif you accept the challenge, you can enjoy the joy of victory. ÏİÈë³ÁË¼",
-                "Democritus Ôø¾­Ëµ¹ımoderation increases pleasure and enhances enjoyment. ÏİÈë³ÁË¼",
-                "Pestalozzi Ôø¾­Ëµ¹ıwhat should be done today has not been done, and it will be delayed tomorrow. ÏİÈë³ÁË¼",
-                "Carnegie Ôø¾­Ëµ¹ıa man who doesn't pay attention to small things will never make a great career. ÏİÈë³ÁË¼",
-                "Rousseau Ôø¾­Ëµ¹ıwasting time is a great sin. ÏİÈë³ÁË¼",
-                "Kant Ôø¾­Ëµ¹ısince I have set foot on this road, nothing should hinder me from following this road. ÏİÈë³ÁË¼",
-                "Sir Klaus Mercer Ôø¾­Ëµ¹ıeducation costs money, and so does ignorance. ÏİÈë³ÁË¼",
-                "Voltaire Ôø¾­Ëµ¹ıto stick to the cause of great will requires a consistent spirit. ÏİÈë³ÁË¼",
-                "Abraham Lincoln Ôø¾­Ëµ¹ıit's not so much how old you live, but how you spend those years. ÏİÈë³ÁË¼",
-                "Han Fei Ôø¾­Ëµ¹ıinternal and external correspondences should be matched by words and deeds. ÏİÈë³ÁË¼",
-                "Marton Ôø¾­Ëµ¹ıstrong confidence can make ordinary people make amazing career. ÏİÈë³ÁË¼",
-                "Descartes Ôø¾­Ëµ¹ıto read all good books is to talk with many noble people. ÏİÈë³ÁË¼",
-                "Seneca Ôø¾­Ëµ¹ıreal life can only be realized after a difficult and extraordinary struggle. ÏİÈë³ÁË¼",
-                "Ibsen Ôø¾­Ëµ¹ıgreat cause needs determination, ability, organization and sense of responsibility. ÏİÈë³ÁË¼",
-                "Goethe Ôø¾­Ëµ¹ıno one knows how powerful he is until he tries. ÏİÈë³ÁË¼",
-                "Darwin Ôø¾­Ëµ¹ıa man who dares to waste even an hour does not know how to cherish the full value of life. ÏİÈë³ÁË¼",
-                "Anonymous Ôø¾­Ëµ¹ıappreciate every new challenge, because it will build your will and character. ÏİÈë³ÁË¼",
-                "Ostrovsky Ôø¾­Ëµ¹ıa common cause, a common struggle, can make people have the power to endure everything. ÏİÈë³ÁË¼",
-                "Su Shi Ôø¾­Ëµ¹ıthose who made great achievements in ancient times must not only have extraordinary talents, but also perseverance. ÏİÈë³ÁË¼",
-                "Wang Yangming Ôø¾­Ëµ¹ıthose who are determined to learn are also determined to learn, and those who are scholars are determined to do so. ÏİÈë³ÁË¼",
-                "Goethe Ôø¾­Ëµ¹ıreading a good book is like talking to a noble man. ÏİÈë³ÁË¼",
-                "ushinsky Ôø¾­Ëµ¹ılearning is labor, and it is labor full of ideas. ÏİÈë³ÁË¼",
-                "Belinsky Ôø¾­Ëµ¹ıgood books are the most precious treasure. ÏİÈë³ÁË¼",
-                "Franklin Ôø¾­Ëµ¹ıreading is easy and thinking is difficult, but without one of them, there is no use. ÏİÈë³ÁË¼",
-                "rubakin Ôø¾­Ëµ¹ıreading is to build up one's own thoughts with the help of others' thoughts. ÏİÈë³ÁË¼",
-                "Bacon Ôø¾­Ëµ¹ıto arrange time properly is to save time. ÏİÈë³ÁË¼",
-                "Turgenev Ôø¾­Ëµ¹ıdo you want to be happy? I hope you learn to bear hardships first. ÏİÈë³ÁË¼",
-                "Shakespeare Ôø¾­Ëµ¹ıthe man who abandons time, time abandons him. ÏİÈë³ÁË¼",
-                "Schopenhauer Ôø¾­Ëµ¹ıordinary people only think about how to spend their time, and talented people try to make use of it. ÏİÈë³ÁË¼",
-                "Laroche FUKO Ôø¾­Ëµ¹ıit is more important to persevere in achieving than to persevere in defeat. ÏİÈë³ÁË¼",
-                "Shakespeare Ôø¾­Ëµ¹ıa man's life is short, but if he lives it in despicable ways, it will be too long. ÏİÈë³ÁË¼",
-                "Bismarck Ôø¾­Ëµ¹ıfailure is the last test of perseverance. ÏİÈë³ÁË¼",
-                "Shakespeare Ôø¾­Ëµ¹ıthe wisdom in that head, like the spark in the flint, would not come out without fighting it. ÏİÈë³ÁË¼"
+            åäººåè¨€=[
+                "Voltaire æ›¾ç»è¯´è¿‡without great difficulties, there will be no great cause. é™·å…¥æ²‰æ€",
+                "Fuller æ›¾ç»è¯´è¿‡suffering cultivates some people and destroys others. é™·å…¥æ²‰æ€",
+                "Vincent Peel æ›¾ç»è¯´è¿‡changing your mind changes your world. é™·å…¥æ²‰æ€",
+                "Napoleon Hill æ›¾ç»è¯´è¿‡don't wait, the time will never be right. é™·å…¥æ²‰æ€",
+                "Seneca æ›¾ç»è¯´è¿‡life is like a fable. Its value is not in its length, but in its content. é™·å…¥æ²‰æ€",
+                "Oprah Winfrey æ›¾ç»è¯´è¿‡you are what you believe. é™·å…¥æ²‰æ€",
+                "Lucent æ›¾ç»è¯´è¿‡life can't be twice, but many people are not good at even once. é™·å…¥æ²‰æ€",
+                "Shakespeare æ›¾ç»è¯´è¿‡a man's life is short, but if he lived it in despicable ways, it would be too long. é™·å…¥æ²‰æ€",
+                "Descartes æ›¾ç»è¯´è¿‡my efforts to study have no other benefits, but more and more found their ignorance. é™·å…¥æ²‰æ€",
+                "Zola æ›¾ç»è¯´è¿‡once the road of life is chosen, we should go to the end bravely and never look back. é™·å…¥æ²‰æ€",
+                "Michelle Pan æ›¾ç»è¯´è¿‡life is a dangerous Canyon, only brave people can pass through. é™·å…¥æ²‰æ€",
+                "Jim Ron æ›¾ç»è¯´è¿‡either you dominate life or you are dominated by life. é™·å…¥æ²‰æ€",
+                "Haibel æ›¾ç»è¯´è¿‡life is school. There, a good teacher is not so much happiness as misfortune. é™·å…¥æ²‰æ€",
+                "Jennalle George S. button æ›¾ç»è¯´è¿‡if you accept the challenge, you can enjoy the joy of victory. é™·å…¥æ²‰æ€",
+                "Democritus æ›¾ç»è¯´è¿‡moderation increases pleasure and enhances enjoyment. é™·å…¥æ²‰æ€",
+                "Pestalozzi æ›¾ç»è¯´è¿‡what should be done today has not been done, and it will be delayed tomorrow. é™·å…¥æ²‰æ€",
+                "Carnegie æ›¾ç»è¯´è¿‡a man who doesn't pay attention to small things will never make a great career. é™·å…¥æ²‰æ€",
+                "Rousseau æ›¾ç»è¯´è¿‡wasting time is a great sin. é™·å…¥æ²‰æ€",
+                "Kant æ›¾ç»è¯´è¿‡since I have set foot on this road, nothing should hinder me from following this road. é™·å…¥æ²‰æ€",
+                "Sir Klaus Mercer æ›¾ç»è¯´è¿‡education costs money, and so does ignorance. é™·å…¥æ²‰æ€",
+                "Voltaire æ›¾ç»è¯´è¿‡to stick to the cause of great will requires a consistent spirit. é™·å…¥æ²‰æ€",
+                "Abraham Lincoln æ›¾ç»è¯´è¿‡it's not so much how old you live, but how you spend those years. é™·å…¥æ²‰æ€",
+                "Han Fei æ›¾ç»è¯´è¿‡internal and external correspondences should be matched by words and deeds. é™·å…¥æ²‰æ€",
+                "Marton æ›¾ç»è¯´è¿‡strong confidence can make ordinary people make amazing career. é™·å…¥æ²‰æ€",
+                "Descartes æ›¾ç»è¯´è¿‡to read all good books is to talk with many noble people. é™·å…¥æ²‰æ€",
+                "Seneca æ›¾ç»è¯´è¿‡real life can only be realized after a difficult and extraordinary struggle. é™·å…¥æ²‰æ€",
+                "Ibsen æ›¾ç»è¯´è¿‡great cause needs determination, ability, organization and sense of responsibility. é™·å…¥æ²‰æ€",
+                "Goethe æ›¾ç»è¯´è¿‡no one knows how powerful he is until he tries. é™·å…¥æ²‰æ€",
+                "Darwin æ›¾ç»è¯´è¿‡a man who dares to waste even an hour does not know how to cherish the full value of life. é™·å…¥æ²‰æ€",
+                "Anonymous æ›¾ç»è¯´è¿‡appreciate every new challenge, because it will build your will and character. é™·å…¥æ²‰æ€",
+                "Ostrovsky æ›¾ç»è¯´è¿‡a common cause, a common struggle, can make people have the power to endure everything. é™·å…¥æ²‰æ€",
+                "Su Shi æ›¾ç»è¯´è¿‡those who made great achievements in ancient times must not only have extraordinary talents, but also perseverance. é™·å…¥æ²‰æ€",
+                "Wang Yangming æ›¾ç»è¯´è¿‡those who are determined to learn are also determined to learn, and those who are scholars are determined to do so. é™·å…¥æ²‰æ€",
+                "Goethe æ›¾ç»è¯´è¿‡reading a good book is like talking to a noble man. é™·å…¥æ²‰æ€",
+                "ushinsky æ›¾ç»è¯´è¿‡learning is labor, and it is labor full of ideas. é™·å…¥æ²‰æ€",
+                "Belinsky æ›¾ç»è¯´è¿‡good books are the most precious treasure. é™·å…¥æ²‰æ€",
+                "Franklin æ›¾ç»è¯´è¿‡reading is easy and thinking is difficult, but without one of them, there is no use. é™·å…¥æ²‰æ€",
+                "rubakin æ›¾ç»è¯´è¿‡reading is to build up one's own thoughts with the help of others' thoughts. é™·å…¥æ²‰æ€",
+                "Bacon æ›¾ç»è¯´è¿‡to arrange time properly is to save time. é™·å…¥æ²‰æ€",
+                "Turgenev æ›¾ç»è¯´è¿‡do you want to be happy? I hope you learn to bear hardships first. é™·å…¥æ²‰æ€",
+                "Shakespeare æ›¾ç»è¯´è¿‡the man who abandons time, time abandons him. é™·å…¥æ²‰æ€",
+                "Schopenhauer æ›¾ç»è¯´è¿‡ordinary people only think about how to spend their time, and talented people try to make use of it. é™·å…¥æ²‰æ€",
+                "Laroche FUKO æ›¾ç»è¯´è¿‡it is more important to persevere in achieving than to persevere in defeat. é™·å…¥æ²‰æ€",
+                "Shakespeare æ›¾ç»è¯´è¿‡a man's life is short, but if he lives it in despicable ways, it will be too long. é™·å…¥æ²‰æ€",
+                "Bismarck æ›¾ç»è¯´è¿‡failure is the last test of perseverance. é™·å…¥æ²‰æ€",
+                "Shakespeare æ›¾ç»è¯´è¿‡the wisdom in that head, like the spark in the flint, would not come out without fighting it. é™·å…¥æ²‰æ€"
             ];
 
-            Ôø¾­Ëµ¹ı=[
+            æ›¾ç»è¯´è¿‡=[
                 "once said, ",
                 "inadvertently said so, ",
                 "mentioned before, ",
                 "said a word full of philosophy, "
             ];
 
-            ÏİÈë³ÁË¼=[
+            é™·å…¥æ²‰æ€=[
                 "It makes me lost in thought. ",
                 "With this sentence, we need to examine this issue more carefully. ",
                 "I hope you can understand this sentence well. ",
@@ -455,26 +475,26 @@
                 "It precisely proves that. ",
                 "It just proves my opinions. ", 
                 "Don't you think it does have a point? ",
-                "From this point of view, it does work if we ×ö·¨. ",
-                "Certainly, it means that to ×ö·¨ is a good way to solve the problem. ",
-                "We can see the advantages to ×ö·¨ through the sentence. ",
-                "According to the sentence, we can know it is really a wise method to ×ö·¨. "
+                "From this point of view, it does work if we åšæ³•. ",
+                "Certainly, it means that to åšæ³• is a good way to solve the problem. ",
+                "We can see the advantages to åšæ³• through the sentence. ",
+                "According to the sentence, we can know it is really a wise method to åšæ³•. "
             ];
 
-            ·Öµã=[
+            åˆ†ç‚¹=[
                 ['First, ','Second, ','Third, '],
                 ['Firstly, ','Secondly, ','Thirdly, '],
                 ['Above all, ','Next, ','Finally, ']
             ];
 
-            ×Ü½á=[
+            æ€»ç»“=[
                 "All in all, ",
                 "In a word, ",
                 "In conclusion, ",
                 "Anyhow, "
             ];
 
-            ×Ü½áµÄ»°Óï=[
+            æ€»ç»“çš„è¯è¯­=[
                 "If we work together, I believe we can solve the problem finally. ",
                 "Let's work together, then we will finally work it out. ",
                 "I think no difficulty can beat us. "
@@ -482,7 +502,7 @@
         }
 
 
-        function Ëæ»úÊı(minNum,maxNum) {												
+        function éšæœºæ•°(minNum,maxNum) {												
 			switch(arguments.length) {												
 				case 1:																
 					return parseInt(Math.random()*minNum+1,10);						
@@ -496,84 +516,84 @@
 			}																		
 		}
 
-        function Ëæ»úÈ¡³ö(ÁĞ±í){
-            return ÁĞ±í[Ëæ»úÊı(0,ÁĞ±í.length-1)];
+        function éšæœºå–å‡º(åˆ—è¡¨){
+            return åˆ—è¡¨[éšæœºæ•°(0,åˆ—è¡¨.length-1)];
         }
 
-        function Ëæ»ú²»ÖØ¸´È¡³ö(ÁĞ±í){
-            if(ÁĞ±í.length>=2)
-                return ÁĞ±í.splice(Ëæ»úÊı(0,ÁĞ±í.length-1),1)[0];
-            return ÁĞ±í[Ëæ»úÊı(0,ÁĞ±í.length-1)];
+        function éšæœºä¸é‡å¤å–å‡º(åˆ—è¡¨){
+            if(åˆ—è¡¨.length>=2)
+                return åˆ—è¡¨.splice(éšæœºæ•°(0,åˆ—è¡¨.length-1),1)[0];
+            return åˆ—è¡¨[éšæœºæ•°(0,åˆ—è¡¨.length-1)];
         }
 
-        function Éú³É(){
-            Éú³ÉÓï¾ä();
+        function ç”Ÿæˆ(){
+            ç”Ÿæˆè¯­å¥();
 
-            Ö÷Ìâ=document.getElementById("Topic").value;
-            if(Ö÷Ìâ=='')
+            ä¸»é¢˜=document.getElementById("Topic").value;
+            if(ä¸»é¢˜=='')
             {
-                document.getElementById("Generate").value="Äã»¹Ã»ÊäÖ÷Ìâ£¬Ğ´²»³öÀ´";
+                document.getElementById("Generate").value="ä½ è¿˜æ²¡è¾“ä¸»é¢˜ï¼Œå†™ä¸å‡ºæ¥";
                 return;
             }
 
-            ¿ªÍ·=
-            Ëæ»ú²»ÖØ¸´È¡³ö(½ñÌìÎÒÒªËµ)
-            +Ëæ»ú²»ÖØ¸´È¡³ö(Ö÷ÌâµÄÖØÒªĞÔ);
+            å¼€å¤´=
+            éšæœºä¸é‡å¤å–å‡º(ä»Šå¤©æˆ‘è¦è¯´)
+            +éšæœºä¸é‡å¤å–å‡º(ä¸»é¢˜çš„é‡è¦æ€§);
 
-            Ëæ»ú´ÎÊı=Ëæ»úÊı(1,2);
-            for(i=0;i<Ëæ»ú´ÎÊı;++i)
+            éšæœºæ¬¡æ•°=éšæœºæ•°(1,2);
+            for(i=0;i<éšæœºæ¬¡æ•°;++i)
             {
-                ¿ªÍ·+=Ëæ»ú²»ÖØ¸´È¡³ö(¹ı¶É¾ä);
-                ¿ªÍ·+=Ëæ»ú²»ÖØ¸´È¡³ö(Ö÷ÌâµÄÖØÒªĞÔ);
+                å¼€å¤´+=éšæœºä¸é‡å¤å–å‡º(è¿‡æ¸¡å¥);
+                å¼€å¤´+=éšæœºä¸é‡å¤å–å‡º(ä¸»é¢˜çš„é‡è¦æ€§);
             }
-            ¿ªÍ·+=Ëæ»ú²»ÖØ¸´È¡³ö(ÎÒ¸ø³ö½¨Òé);
+            å¼€å¤´+=éšæœºä¸é‡å¤å–å‡º(æˆ‘ç»™å‡ºå»ºè®®);
             
-            var ÖĞ¼ä='';
-            var Ëæ»ú·Öµã=Ëæ»úÈ¡³ö(·Öµã);
+            var ä¸­é—´='';
+            var éšæœºåˆ†ç‚¹=éšæœºå–å‡º(åˆ†ç‚¹);
             for(var i=0;i<3;++i)
             {
-                var µ±Ç°×ö·¨=Ëæ»ú²»ÖØ¸´È¡³ö(Ëæ»ú²»ÖØ¸´È¡³ö(×ö·¨));
-                ÖĞ¼ä+=Ëæ»ú·Öµã[i];
-                ÖĞ¼ä+=Ëæ»ú²»ÖØ¸´È¡³ö(ÎªÊ²Ã´²»);
-                ÖĞ¼ä=ÖĞ¼ä.slice(0,ÖĞ¼ä.length-2)+
-                µ±Ç°×ö·¨+ÖĞ¼ä.slice(ÖĞ¼ä.length-2,ÖĞ¼ä.length);
+                var å½“å‰åšæ³•=éšæœºä¸é‡å¤å–å‡º(éšæœºä¸é‡å¤å–å‡º(åšæ³•));
+                ä¸­é—´+=éšæœºåˆ†ç‚¹[i];
+                ä¸­é—´+=éšæœºä¸é‡å¤å–å‡º(ä¸ºä»€ä¹ˆä¸);
+                ä¸­é—´=ä¸­é—´.slice(0,ä¸­é—´.length-2)+
+                å½“å‰åšæ³•+ä¸­é—´.slice(ä¸­é—´.length-2,ä¸­é—´.length);
 
-                Ëæ»ú´ÎÊı=Ëæ»úÊı(2,3);
-                for(var j=0;j<Ëæ»ú´ÎÊı;++j)
+                éšæœºæ¬¡æ•°=éšæœºæ•°(2,3);
+                for(var j=0;j<éšæœºæ¬¡æ•°;++j)
                 {
-                    ÖĞ¼ä+=Ëæ»ú²»ÖØ¸´È¡³ö(¹ı¶É¾ä);
-                    if(Ëæ»úÊı(1,10)<3)
-                        ÖĞ¼ä+=Ëæ»ú²»ÖØ¸´È¡³ö(ÃûÈËÃûÑÔ)
-                        .replace(RegExp('Ôø¾­Ëµ¹ı','g'),Ëæ»úÈ¡³ö(Ôø¾­Ëµ¹ı))
-                        .replace(RegExp('ÏİÈë³ÁË¼','g'),Ëæ»úÈ¡³ö(ÏİÈë³ÁË¼));
+                    ä¸­é—´+=éšæœºä¸é‡å¤å–å‡º(è¿‡æ¸¡å¥);
+                    if(éšæœºæ•°(1,10)<3)
+                        ä¸­é—´+=éšæœºä¸é‡å¤å–å‡º(åäººåè¨€)
+                        .replace(RegExp('æ›¾ç»è¯´è¿‡','g'),éšæœºå–å‡º(æ›¾ç»è¯´è¿‡))
+                        .replace(RegExp('é™·å…¥æ²‰æ€','g'),éšæœºå–å‡º(é™·å…¥æ²‰æ€));
                     else
                     {
-                        ÖĞ¼ä+=Ëæ»úÈ¡³ö(Í¨¹ıÕâÖÖ·½·¨);
-                        ÖĞ¼ä+=Ëæ»úÈ¡³ö(ÎÒÃÇ¿ÉÒÔ);
-                        ÖĞ¼ä+=Ëæ»ú²»ÖØ¸´È¡³ö(×÷ÓÃ)+'. ';
+                        ä¸­é—´+=éšæœºå–å‡º(é€šè¿‡è¿™ç§æ–¹æ³•);
+                        ä¸­é—´+=éšæœºå–å‡º(æˆ‘ä»¬å¯ä»¥);
+                        ä¸­é—´+=éšæœºä¸é‡å¤å–å‡º(ä½œç”¨)+'. ';
                     }
                 }
-                ÖĞ¼ä=ÖĞ¼ä.replace(RegExp('×ö·¨', 'g'),µ±Ç°×ö·¨);
-                ÖĞ¼ä+='\n\n';
+                ä¸­é—´=ä¸­é—´.replace(RegExp('åšæ³•', 'g'),å½“å‰åšæ³•);
+                ä¸­é—´+='\n\n';
             }
 
-            var ½áÎ²=Ëæ»ú²»ÖØ¸´È¡³ö(×Ü½á)+
-            Ëæ»ú²»ÖØ¸´È¡³ö(Ö÷ÌâµÄÖØÒªĞÔ)+
-            Ëæ»ú²»ÖØ¸´È¡³ö(×Ü½áµÄ»°Óï);
+            var ç»“å°¾=éšæœºä¸é‡å¤å–å‡º(æ€»ç»“)+
+            éšæœºä¸é‡å¤å–å‡º(ä¸»é¢˜çš„é‡è¦æ€§)+
+            éšæœºä¸é‡å¤å–å‡º(æ€»ç»“çš„è¯è¯­);
             
             var Generate=document.getElementById("Generate");
             Generate.style.height="650px";
-            var Í¨Æª='Dear xxx,\n\n'+¿ªÍ·+'\n\n'+ÖĞ¼ä+½áÎ²+'\n\nYours, xxx';
-            Í¨Æª=Í¨Æª.replace(RegExp('Ö÷Ìâ','g'),Ö÷Ìâ);
-            Generate.value=Í¨Æª;
+            var é€šç¯‡='Dear xxx,\n\n'+å¼€å¤´+'\n\n'+ä¸­é—´+ç»“å°¾+'\n\nYours, xxx';
+            é€šç¯‡=é€šç¯‡.replace(RegExp('ä¸»é¢˜','g'),ä¸»é¢˜);
+            Generate.value=é€šç¯‡;
             
-            var ´ÊÊı=0;
-            while (Í¨Æª.indexOf(' ')+1)
+            var è¯æ•°=0;
+            while (é€šç¯‡.indexOf(' ')+1)
             {
-                Í¨Æª=Í¨Æª.replace(' ','');
-                ´ÊÊı++;
+                é€šç¯‡=é€šç¯‡.replace(' ','');
+                è¯æ•°++;
             }
-            document.getElementById("WordNum").innerHTML=´ÊÊı+" words";
+            document.getElementById("WordNum").innerHTML=è¯æ•°+" words";
         }
     </script>
 </body>
